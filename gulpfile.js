@@ -187,8 +187,8 @@ gulp.task('execute',
         'moulinette-sass',
         'moulinette-html',
         'moulinette-js',
-        'inject-favicon-markups',
-        'check-for-favicon-update',
+        // 'inject-favicon-markups',
+        // 'check-for-favicon-update',
         'browser-sync',
         function() {
             // gulp update dist files from src changment 
@@ -199,7 +199,8 @@ gulp.task('execute',
             gulp.watch("./dist/*.html").on('change', browserSync.reload);
             gulp.watch("./dist/css/*.css").on('change', browserSync.reload);
             gulp.watch("./dist/js/*.js").on('change', browserSync.reload);
-        }));
+        }
+    ));
 
 // makes command gulp + enter do execute code (all that must be run whenever a page is modified)
 gulp.task('default', gulp.parallel('execute'));
