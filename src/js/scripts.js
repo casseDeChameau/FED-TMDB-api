@@ -7,7 +7,10 @@ let trendingUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=4250bfd9b8
 // let filmUrl = 
 // let Url = documentary
 // let Url = series
-let btn = document.querySelector('button');
+let btn1 = document.querySelector('trending');
+let btn2 = document.querySelector('film');
+let btn3 = document.querySelector('documentary');
+let btn4 = document.querySelector('serie');
 let searchRequest = document.querySelector('[name="search-movie"]');
 
 let movieWrap = document.querySelector('.movies-wrapper');
@@ -29,25 +32,20 @@ function newFrame(movie) {
     movieWrap.appendChild(curDiv);
 }
 
+let monJSON;
 
 function myAjaxFunction() {
     if (this.status == 200 && this.readyState == 4) {
-        let monJSON = JSON.parse(this.responseText);
+        monJSON = JSON.parse(this.responseText);
         monJSON.results.forEach((movie) => {
             newFrame(movie);
         });
     }
 }
 
-// function myCallAjax() {
-//     if (curentTarget) {
-//         xhr.open('GET', tmdbApiUrl, true);
-//     }
-//     xhr.send();
-// }
-
-function myCallAjax() {
-    xhr.open('GET', upcomingUrl, true);
+function myCallAjax(url) {
+    xhr.addEventListener('readystatechange', myAjaxFunction);
+    xhr.open('GET', url, true);
     xhr.send();
 }
 
@@ -55,8 +53,16 @@ function myCallAjax() {
 
 // * -------------------------------- APPLICATION
 
-xhr.addEventListener('readystatechange', myAjaxFunction);
-window.addEventListener('load', myCallAjax);
+window.addEventListener('load', function() { myCallAjax(upcomingUrl) });
+// logo.addEventListener('click', function() { myCallAjax(upcomingUrl) });
+
+
+
+// btn1.addEventListener('click',  });
+// btn2.addEventListener('click', myCallAjax);
+// btn3.addEventListener('click', myCallAjax);
+// btn4.addEventListener('click', myCallAjax);
+
 
 // btn.addEventListener('click', myCallAjax);
 // searchRequest.addEventListener('focusin', watchForSearch);
@@ -76,3 +82,6 @@ monJSON.results.forEach((movie) => {
    newFrame(movie);
 }); 
 */
+// ex 1 : faire une recherche sur TOUS les films
+// ex 2 : faire un affichage par genre (upcoming(home) film docu ...))
+// ex 3 : trier le résultat affiché upcoming
