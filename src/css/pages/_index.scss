@@ -7,22 +7,11 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
+    align-items: flex-end;
     background: black;
     box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
     .on-scroll {
         height: 4rem;
-    }
-    input {
-        background-color: transparent;
-        color: white;
-        height: 2rem;
-        border: none;
-        border-color: none;
-        transform: translateY(10px);
-    }
-    input:focus {
-        border: 0px solid black;
-        outline: none;
     }
     h1 {
         position: absolute;
@@ -37,12 +26,32 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        button {
-            background-color: black;
-            color: rgb(150, 150, 150);
+        font-size: 0.8rem;
+        color: rgb(150, 150, 150);
+        .pop-btn {
+            margin-left: 12%;
+        }
+        p {
+            padding: 0 1rem .5rem;
+            margin: 0;
+            cursor: pointer;
+            &:hover {
+                transition: .3s all ease-in-out;
+                color: white;
+            }
+            &.active {
+                color: red;
+            }
+        }
+        input {
+            background-color: transparent;
+            color: red;
             border: none;
             padding: 0 1rem .5rem;
-            font-size: 0.8rem;
+            width: 20%;
+        }
+        input:focus {
+            outline: none;
         }
     }
 }
@@ -67,6 +76,9 @@
     .movie-frame {
         width: 20vw;
         padding: .5rem;
+        &* :not(img) {
+            display: none;
+        }
         .movie-title {
             height: 3rem;
             margin: .2rem 0 1rem;
@@ -83,8 +95,8 @@
             height: 1rem;
             background-color: orange;
         }
-        .show-detail {
-            display: none;
+        .show-details {
+            display: initial;
         }
     }
 }
@@ -97,20 +109,28 @@
     height: 3rem;
     display: flex;
     align-items: flex-end;
-    button {
+    justify-content: center;
+    div {
+        p {
+            margin: .5rem;
+        }
         width: 100%;
         height: 90%;
         background-color: black;
         color: rgba(100, 100, 100, 1);
-        border-width: 0 1px 0 0;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         text-transform: uppercase;
+        text-align: center;
         letter-spacing: .2rem;
         transition: .1s all ease-in-out;
+        cursor: pointer;
         &:hover {
-            transition: .3ss all ease-in-out;
+            transition: .3s all ease-in-out;
             height: 100%;
             bottom: 0;
+            color: white;
+        }
+        &.active {
             color: white;
         }
     }

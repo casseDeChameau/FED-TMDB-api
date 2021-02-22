@@ -65,19 +65,25 @@ gulp.task('browser-sync', function() {
 });
 // gulp image
 // with compressing options
+// gulp.task('compress-img', function() {
+//     gulp.src('./src/img/*')
+//         .pipe(image({
+//             pngquant: true,
+//             optipng: true,
+//             zopflipng: true,
+//             jpegRecompress: true,
+//             mozjpeg: true,
+//             gifsicle: true,
+//             svgo: true,
+//             concurrent: 10,
+//             quiet: false // compressed size gain indicator
+//         }))
+//         .pipe(gulp.dest('./dist/img'));
+// });
+// without options
 gulp.task('compress-img', function() {
     gulp.src('./src/img/*')
-        .pipe(image({
-            pngquant: true,
-            optipng: true,
-            zopflipng: true,
-            jpegRecompress: true,
-            mozjpeg: true,
-            gifsicle: true,
-            svgo: true,
-            concurrent: 10,
-            quiet: false // compressed size gain indicator
-        }))
+        .pipe(image())
         .pipe(gulp.dest('./dist/img'));
 });
 

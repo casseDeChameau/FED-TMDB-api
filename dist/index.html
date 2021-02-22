@@ -9,27 +9,42 @@
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
 
-<body>
+<body onload="initFrame()">
     <div class="bg-div"></div>
     <header class="header">
-        <h1>ONSTAGE</h1>
-        <input type="search" name="search-movie" placeholder="search">
+        <h1 onclick="initFrame()">ONSTAGE</h1>
 
         <div class="sort">
-            <button class="pop-btn">A à Z</button>
-            <button class="rate-btn">Les plus notés</button>
-            <button class="note-btn">plus récents</button>
+            <div class="sort-btn pop-btn">
+                <p>De A à Z</p>
+            </div>
+            <div class="sort-btn rate-btn">
+                <p>Les plus notés</p>
+            </div>
+            <div class="sort-btn note-btn">
+                <p>Les plus récents</p>
+            </div>
+            <input type="search" name="search-movie" placeholder="search" autocomplete="on">
         </div>
     </header>
 
 
     <div class="movies-wrapper">
     </div>
+
     <footer class="footer">
-        <button class="btn1">films les plus populaires</button>
-        <button class="btn2">films les mieux notés</button>
-        <button class="btn3">séries les plus populaires</button>
-        <button class="btn4">séries les mieux notées</button>
+        <div class="btn1">
+            <p>films les plus populaires</p>
+        </div>
+        <div class="btn2">
+            <p>films les mieux notés</p>
+        </div>
+        <div class="btn3">
+            <p>séries les plus populaires</p>
+        </div>
+        <div class="btn4">
+            <p>séries les mieux notées</p>
+        </div>
     </footer>
 
 </body>
