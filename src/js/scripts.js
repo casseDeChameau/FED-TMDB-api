@@ -87,9 +87,9 @@ function watchForSearch() {
     this.addEventListener('focusout', () => this.value = '');
 }
 
-function showDetails() {
-    evenTarget.classList.add('show-details');
-}
+// function showDetails() {
+//     evenTarget.classList.add('show-details');
+// }
 // * ------------------------------------------------------ APPLICATION
 btn1.addEventListener('click', () => { myCallAjax('https://api.themoviedb.org/3/movie/popular?api_key=4250bfd9b87434db15ff28ef57ec3c08&language=en-US&page=1') });
 btn2.addEventListener('click', () => { myCallAjax('https://api.themoviedb.org/3/movie/top_rated?api_key=4250bfd9b87434db15ff28ef57ec3c08&language=en-US&page=1') });
